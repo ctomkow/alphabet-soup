@@ -13,7 +13,7 @@ def calc():
 
     return render_template(
         'index.html',
-        title="Alphabet Soup. The word scrambler for writers"
+        title="Alphabet Soup. A word scrambler for writers"
     )
 
 
@@ -21,7 +21,7 @@ def calc():
 def result():
     input = request.form['words']
 
-    title = "Alphabet Soup. The word scrambler for writers"
+    title = "Alphabet Soup. A word scrambler for writers"
 
     return render_template(
         'result.html',
