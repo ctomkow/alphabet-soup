@@ -1,0 +1,25 @@
+<!-- Craig Tomkow -->
+<!-- July 26, 2019 -->
+<!-- Main html file -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <div id="container">
+	    <div class="pagetitle">
+	         <h1>Alphabet Soup'izer!</h1>
+	    </div>
+	    <div id="main">
+	        <form method="post" action="{{ url_for('result') }}">
+                <label for="words">Your word smithing:</label>
+                <textarea name="words"></textarea>
+                <input type="submit">
+		    </form>
+	    </div>
+	</div>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+# Craig Tomkow
+# July 26, 2019
+# Yaml file defining Google App environment
+
+runtime: python27
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+- url: /
+  script: main.app
