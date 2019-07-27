@@ -18,15 +18,16 @@ def result():
     text = request.form['words']
 
     list_of_words = []
+    str_of_words  = ""
 
     # If form is blank, set text to placeholder text
     for word in text.split():
         list_of_words.append(word)
 
-    list_of_words = shuffle(list_of_words)
-    string_of_words = " ".join(list_of_words)
+    shuffle(list_of_words)
+    str_of_words = " ".join(list_of_words)
 
     return render_template(
         'result.html',
-        scramble=string_of_words
+        scramble=str_of_words
     )
