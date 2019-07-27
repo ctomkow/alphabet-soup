@@ -2,9 +2,8 @@
 # July 26, 2019
 # Yaml file defining Google App environment
 
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: python37
+instance_class: F2
 
 entrypoint: gunicorn -b :$PORT main:app
 
