@@ -3,6 +3,7 @@
 # Main web app file
 
 from flask import Flask, render_template, request
+from random import shuffle
 
 app = Flask(__name__)
 
@@ -16,11 +17,15 @@ def calc():
 def result():
     text = request.form['words']
 
+    list_of_words = []
+
     # If form is blank, set text to placeholder text
-    if text == '':
-        text = 'input text here'
+    for word in text.split():
+        list_of_words.append(word)
+
+    str = ''.join(shuffle(list_of_words))
 
     return render_template(
         'result.html',
-        scramble=text
+        scramble=str
     )
