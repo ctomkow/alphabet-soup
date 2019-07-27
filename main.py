@@ -10,24 +10,33 @@ app = Flask(__name__)
 
 @app.route('/')
 def calc():
-    return render_template('index.html')
+
+    return render_template(
+        'index.html',
+        title="Alphabet Soup. The word scrambler for writers"
+    )
 
 
 @app.route('/result', methods=['POST'])
 def result():
-    text = request.form['words']
+    input = request.form['words']
+
+    title = "Alphabet Soup. The word scrambler for writers"
+
+    return render_template(
+        'result.html',
+        title=scramble(title),
+        scramble=scramble(input)
+    )
+
+
+def scramble(text):
 
     list_of_words = []
-    str_of_words  = ""
 
-    # If form is blank, set text to placeholder text
     for word in text.split():
         list_of_words.append(word)
 
     shuffle(list_of_words)
-    str_of_words = " ".join(list_of_words)
-
-    return render_template(
-        'result.html',
-        scramble=str_of_words
-    )
+    scrambled_string = " ".join(list_of_words)
+    return scrambled_string

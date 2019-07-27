@@ -4,25 +4,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Alphabet Soup. The word scrambler for writers</title>
-</head>
-<body style="text-align: center;">
-        <div id="container">
-	    <div class="pagetitle">
-	         <h1>Alphabet Soup Scrambler</h1>
-	    </div>
-	    <div id="main">
-	        <form method="post" action="{{ url_for('result') }}">
-                <label for="words"></label>
-                <textarea name="words" rows="30" cols="100"></textarea>
-				<br />
-				<i><a href="https://github.com/ctomkow/alphabet-soup" style="text-decoration:none">source code</a></i>
-				<br />
-                <input type="submit" value="Scrabble it!">
-		    </form>
-	    </div>
-	</div>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body style="text-align: center;">
+		<div id="container">
+			<div class="pagetitle">
+				 <h1>Text Scrambler</h1>
+			</div>
+			<div id="main">
+				<form method="post" action="{{ url_for('result') }}">
+					<label for="words"></label>
+					<textarea name="words" rows="30" cols="100"></textarea>
+					<br />
+					<input type="submit" value="Scrabble it!">
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<i><a href="https://github.com/ctomkow/alphabet-soup" style="text-decoration:none">source code</a></i>
+		</div>
+	</body>
 </html>
