@@ -23,9 +23,10 @@ def result():
     for word in text.split():
         list_of_words.append(word)
 
-    str = ''.join(shuffle(list_of_words))
+    list_of_words = shuffle(list_of_words)
+    string_of_words = " ".join(list_of_words)
 
     return render_template(
         'result.html',
-        scramble=str
+        scramble=string_of_words
     )
